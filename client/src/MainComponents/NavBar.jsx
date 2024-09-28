@@ -5,6 +5,8 @@ export default function NavBar(){
         <div>
 <Link to={"/"}>Home</Link>
 <Link to={"/games"}>Latests Releases</Link>
+<Link to={"/Trending"}>Trending Games</Link>
+<Link to={"/TalkToUs"}>Talk To Us!</Link>
         </div>
     )
 }

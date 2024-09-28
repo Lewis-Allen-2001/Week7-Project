@@ -65,7 +65,7 @@ app.get("/games", async (req, res) => {
   }
 });
 
-app.post("/games", async (req, res) => {
+app.post("/TalkToUs", async (req, res) => {
   const { title, studio, platforms, released, img_url } = req.body;
   try {
     const result = await db.query(
@@ -81,10 +81,6 @@ app.post("/games", async (req, res) => {
     res.status(500).json(`${error.name}: ${error.message}`);
   }
 });
-
-
-
-dateFormat("2024-09-12T23:00:00.000Z","mmmm dS, yyyy")
 
 
 app.listen(3000, () => console.log(`Listening on port: 3000`))
