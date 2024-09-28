@@ -6,7 +6,7 @@ export default function LatestReleases(){
 
     useEffect(() =>{
         async function fetchGames(){
-            const res = await fetch('http://localhost:3000/games')
+            const res = await fetch('http://localhost:5432/games')
             const games = await res.json()
 
             setGames(games);

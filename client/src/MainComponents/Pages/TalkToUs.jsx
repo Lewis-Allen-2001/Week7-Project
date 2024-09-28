@@ -6,6 +6,7 @@ export default function TalkToUs(){
         <div>
             <h1>Tell Us Your Favourite Game!</h1>
             <GameForm/>
+            
         </div>
     )
 }

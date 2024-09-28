@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import pg from "pg";
 import dotenv from "dotenv";
-import dateFormat from "dateformat";
+
 
 const app = express();
 app.use(cors());
@@ -65,22 +65,25 @@ app.get("/games", async (req, res) => {
   }
 });
 
-app.post("/TalkToUs", async (req, res) => {
-  const { title, studio, platforms, released, img_url } = req.body;
+app.post("/games", async (req, res) => {
+  console.log(req.body);
+  const { title, studio, platforms, released } = req.body;
   try {
     const result = await db.query(
       `
-      INSERT INTO games (title, studio, platforms, released, img_url)
-      VALUES ($1, $2, $3, $4, $5)
+      INSERT INTO games (title, studio, platforms, released)
+      VALUES ($1, $2, $3, $4)
+      RETURNING *;
       `,
-      [title, studio, platforms, released, img_url]
+      [title, studio, platforms, released]
     );
 
-    res.status(200).json({ success: result });
-  } catch (error) {
+    res.status(200).json({ success: result.rows[0]});
+  } catch(error) {
+    console.log(error)
     res.status(500).json(`${error.name}: ${error.message}`);
   }
 });
 
 
-app.listen(3000, () => console.log(`Listening on port: 3000`))
+app.listen(5432, () => console.log(`Listening on port: 5432`))

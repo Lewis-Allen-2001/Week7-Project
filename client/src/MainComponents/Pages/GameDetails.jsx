@@ -18,7 +18,7 @@ console.log(formattedDate);
 
   useEffect(() => {
     async function fetchGameDetails() {
-      const res = await fetch(`http://localhost:3000/games?include_genres=true&id=${id}`);
+      const res = await fetch(`http://localhost:5432/games?include_genres=true&id=${id}`);
       const details = await res.json();
       setGameDetails(details);
     }

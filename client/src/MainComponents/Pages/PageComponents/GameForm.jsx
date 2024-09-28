@@ -1,46 +1,75 @@
 import { useState } from "react";
 
-export default function NewGameForm({getNewGame}){
+const GameForm = () => {
+  const [formData, setFormData] = useState({ title: "", studio: "", platforms: "", released: "" });
+const [gameResult, setGameResult] = useState([])
 
-const [gameFormData, setGameFormData] = useState({title: "", studio: "", platforms: "", released: ""})
 
-function handleChange(event) {
-    console.log(event)
-setGameFormData({...gameFormData, [event.target.name] : event.target.value})
-console.log(gameFormData)
-}
+  // Handle form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-const handleSubmit = async (e) => {
-e.preventDefault();
-try{
-    await fetch("http://localhost:3000/games", {
+    try {
+        console.log("post", formData )
+    const result =  await fetch("http://localhost:5432/games", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(gameFormData),
-    });
+        body: JSON.stringify(formData),
+      });
+      const parse = await result.json()
+setGameResult(parse.success);
 
-    setGameFormData({title: "", studio: "", platforms: "", released: ""});
+      //setFormData({ title: "", studio: "", platforms: "", released: "" }); 
 
-    getNewGame();
+    } catch (error) {
+      console.error("Error posting message:", error);
+    }
+  };
 
-} catch (error) {
-console.error("error posting game", error);
-}
+  // Handle form input change
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    console.log(formData); // You may not see the latest update immediately
+  };
 
+  console.log("body", formData)
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          name="title"
+          onChange={handleChange}
+          placeholder="Game Title"
+          required
+        />
+        <input
+          name="studio"
+          onChange={handleChange}
+          placeholder="Game Studio"
+          required
+        />
+        <input
+          name="platforms"
+          onChange={handleChange}
+          placeholder="Game platform"
+          required
+        />
+        <input
+        type="date"
+          name="released"
+          onChange={handleChange}
+          placeholder="When was this released?"
+          required
+        />
+        <button type="submit">submit</button>
+      </form>
+      {gameResult && <div>{gameResult.title}</div>}
+    </div>
+  );
 };
 
-    return(
-<div>
-
-<form onSubmit={handleSubmit}>
-<input name="title" placeholder="Enter Game Title" onChange={handleChange} required></input>
-<input name="studio" placeholder="Enter Game Studio" onChange={handleChange} required></input>
-<input name="platforms" placeholder="On What Platforms?" onChange={handleChange} required></input>
-<input name="released" placeholder="When Was This Released?" onChange={handleChange} required></input>
-<button type="submit">Submit</button>
-</form>
-</div>
-    )
-}
+export default GameForm;
