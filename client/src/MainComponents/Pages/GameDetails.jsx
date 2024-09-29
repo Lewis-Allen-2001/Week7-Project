@@ -14,7 +14,7 @@ export default function GameDetailsPage() {
 
   useEffect(() => {
     async function fetchGameDetails() {
-      const res = await fetch(`https://week7-project-client-r6wk.onrender.com/games?include_genres=true&id=${id}`);
+      const res = await fetch(`https://week7-project-client-r6wk.onrender.com/games/games?include_genres=true&id=${id}`);
       const details = await res.json();
       setGameDetails(details);
     }
