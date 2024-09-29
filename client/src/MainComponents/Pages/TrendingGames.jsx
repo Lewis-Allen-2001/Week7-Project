@@ -1,3 +1,6 @@
+import "./TrendingGames.css"
+
+
 export default function TrendingGames(){
     return(
         <div>

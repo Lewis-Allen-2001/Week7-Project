@@ -5,6 +5,7 @@ import GameDetails from "./MainComponents/Pages/GameDetails"
 import Header from "./MainComponents/Header"
 import TrendingGames from "./MainComponents/Pages/TrendingGames";
 import TalkToUs from "./MainComponents/Pages/TalkToUs";
+import Footer from "./MainComponents/Footer"
 import "./App.css"
 
 
@@ -23,6 +24,8 @@ export default function App() {
       <Route path="/Trending" element={<TrendingGames/>}/>
       <Route path="/TalkToUs" element={<TalkToUs/>}/>
     </Routes>
+
+<Footer/>
     </>
   )
 }

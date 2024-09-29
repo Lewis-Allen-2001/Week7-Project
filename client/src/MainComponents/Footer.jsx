@@ -1,5 +1,7 @@
 export default function Footer(){
     return(
-        <footer>©Lewis Allen 2024</footer>
+        <footer className="Footer">
+        <h3>©Lewis Allen 2024</h3>
+        </footer>
     )
 }

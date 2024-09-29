@@ -24,6 +24,7 @@
   .GameDetails h3 {
     color: #ffcc00; 
     margin: 5px 0; 
+    text-align: center;
   }
   
   .GameDetails ul {
@@ -49,6 +50,9 @@
   
     .GameDetails img {
       max-width: 400px; 
+        margin-left: 100px;
+        display: flex;
+      
     }
   }
   
@@ -56,4 +60,9 @@
     .GameDetails {
       max-width: 800px; 
     }
-  }
+
+.GameDetails img{
+  margin-left: 200px;
+  display: flex;
+}
+}

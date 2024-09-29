@@ -1,0 +1,100 @@
+/* Base mobile-first styling */
+/* Base mobile-first styling */
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.game h1 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Base font size for smaller screens */
+}
+
+.game img {
+    border-radius: 20px;
+    width: 100%;
+    max-width: 280px; /* Adjusted for smaller screens */
+    margin: 10px 0;
+}
+
+.game h3 {
+    color: #ffcc00;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+p, a {
+    color: #ffcc00; 
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Tablet view (760px and above) */
+@media (min-width: 760px) {
+    .game {
+        flex-direction: row; /* Change to row layout */
+        justify-content: center; 
+        align-items: center; 
+        padding: 20px;
+        max-width: 900px; 
+        margin: 20px auto;
+        gap: 20px; /* Add gap between elements */
+    }
+
+    .game h1 {
+        font-size: 2rem;
+        margin-right: 20px;
+        text-align: left; /* Align heading to the left */
+        order: -1; /* Keep h1 at the top */
+    }
+
+    .game img {
+        max-width: 350px; /* Larger image on tablets */
+    }
+
+    .game h3 {
+        font-size: 1.25rem;
+        margin-left: 20px;
+        text-align: left;
+    }
+}
+
+/* Desktop view (1020px and above) */
+@media (min-width: 1020px) {
+    .game {
+        justify-content: space-between; 
+        align-items: center;
+        padding: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 40px; /* Increase gap for larger screens */
+    }
+
+    .game h1 {
+        font-size: 2.5rem;
+        text-align: left;
+        margin-right: 40px;
+        order: -1;
+    }
+
+    .game img {
+        max-width: 500px; /* Larger image size for bigger displays */
+    }
+
+    .game h3 {
+        font-size: 1.5rem;
+        text-align: left;
+        margin-left: 40px;
+    }
+}
+
+
+
+

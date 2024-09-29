@@ -1,0 +1,63 @@
+.GameForm {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a1a; 
+    border: 2px solid #d4af37; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+  }
+  
+  .GameForm form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .GameForm input {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #2a2a2a; 
+    border: 1px solid #d4af37; 
+    border-radius: 5px;
+    color: #d4af37; 
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .GameForm input::placeholder {
+    color: #d4af37; 
+  }
+  
+  .GameForm input:focus {
+    border-color: #ffd700; 
+  }
+  
+  .GameForm button {
+    background-color: #d4af37; 
+    color: #1a1a1a; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .GameForm button:hover {
+    background-color: #ffd700; /
+  }
+  
+  .GameResult {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #2a2a2a; 
+    border: 2px solid #d4af37; 
+    border-radius: 5px;
+    color: #d4af37; 
+  }
+  
+  .GameResult div {
+    margin-bottom: 10px;
+  }
+  

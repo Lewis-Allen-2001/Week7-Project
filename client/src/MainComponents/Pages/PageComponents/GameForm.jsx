@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FormatDate from "../../Utils/FormatDate";
+import "./GameForm.css"
 
 export default function GameForm(){
   const [formData, setFormData] = useState({ title: "", studio: "", platforms: "", released: "" });
@@ -50,7 +51,7 @@ export default function GameForm(){
   console.log("body", formData)
 
   return (
-    <div>
+    <div className="GameForm">
       <form onSubmit={handleSubmit}>
         <input
           name="title"
@@ -88,7 +89,7 @@ export default function GameForm(){
       </form>
   
       {gameResult && (
-        <div>
+        <div className="GameResult">
           <div>{gameResult.title}</div>
           <div>{gameResult.studio}</div>
           <div>{gameResult.platforms}</div>
