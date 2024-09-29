@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import "./SignInForm.css"
 export default function SignInForm() {
 const [formData, setFormData] = useState({ username: '', password: '' });
 const [submitted, setSubmitted] = useState(false);
@@ -27,7 +27,7 @@ function handleSubmit(event) {
 
 return (
     <div>
-
+<div className="SignForm">   
     {!submitted && (
         <form onSubmit={handleSubmit}>
         <input
@@ -47,7 +47,9 @@ return (
         />
         <button type="submit">Submit</button>
         </form>
+        
     )}
+    </div>
 
     {submitted && (
         <div>

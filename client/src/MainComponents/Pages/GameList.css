@@ -1,0 +1,55 @@
+.GameListContainer {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    padding: 20px;
+    background-color: #070707; 
+  }
+
+  h2 {
+    margin-bottom: 20px; 
+    text-align: center; 
+  }
+
+  .GameItem {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin: 15px;
+    transition: transform 0.2s;
+    text-align: center; 
+  }
+  
+  .GameItem:hover {
+    transform: scale(1.05); 
+  }
+  
+  .GameItem img {
+    width: 150px; 
+    height: auto; 
+    border-radius: 8px; 
+  }
+  
+  .GameItem h3 {
+    font-size: 1.2rem; 
+    color: #ffcc00; 
+    margin-top: 10px; 
+    text-decoration: none;
+  }
+  
+  /* Media queries for larger screens */
+  @media (min-width: 760px) {
+    .GameListContainer {
+      flex-direction: row; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+    }
+  
+    .GameItem {
+      margin: 20px; 
+    }
+  
+    .GameItem img {
+      width: 200px; 
+    }
+}

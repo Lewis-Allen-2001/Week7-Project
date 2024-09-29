@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import LatestReleases from "./MainComponents/Pages/LatestReleases";
+import GameList from "./MainComponents/Pages/GameList";
 import Home from "./MainComponents/Pages/Home";
 import GameDetails from "./MainComponents/Pages/GameDetails"
 import Header from "./MainComponents/Header"
@@ -18,7 +18,7 @@ export default function App() {
 
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/games" element={<LatestReleases/>}/>
+      <Route path="/games" element={<GameList/>}/>
       <Route path="/games/:id" element={<GameDetails/>}/>
       <Route path="/Trending" element={<TrendingGames/>}/>
       <Route path="/TalkToUs" element={<TalkToUs/>}/>

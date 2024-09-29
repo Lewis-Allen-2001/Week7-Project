@@ -1,0 +1,48 @@
+h2{
+    color: #ffcc00;
+}
+
+.SignForm {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center; 
+    padding: 10px;
+    border: 1px solid #0f0f10; 
+    border-radius: 8px; 
+    background-color: #080808; 
+    box-shadow: 0 2px 10px rgba(238, 199, 7, 0.1); 
+    margin: 20px; 
+  }
+  
+  .SignForm input {
+    width: 100%; 
+    max-width: 235px; 
+    padding: 10px; 
+    margin: 10px 5px; 
+    border: 1px solid #d9dace; 
+    border-radius: 4px; 
+    font-size: 1rem; 
+  }
+  
+  .SignForm button {
+    padding: 10px;
+    margin-left: 90px;
+    border: none; 
+    border-radius: 4px; 
+    background-color: #ffcc00; 
+    color: #090909; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+  }
+  
+  .SignForm button:hover {
+    background-color: #00b30f; 
+  }
+
+  @media (min-width: 760px) {
+    .SignForm {
+      width: 400px; 
+    }
+}

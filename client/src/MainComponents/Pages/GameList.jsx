@@ -1,7 +1,8 @@
 import {useState, useEffect} from "react"
 import { Link } from "react-router-dom"
+import  "./GameList.css"
 
-export default function LatestReleases(){
+export default function GameList(){
     const[games, setGames] = useState([])
 
     useEffect(() =>{
@@ -15,11 +16,11 @@ fetchGames();
     }, [])
 
     return (
-    <div>
-        <h2>The Latest Game Releases</h2>
+    <div className="GameListContainer">
+        <h2> Game List</h2>
 
         {games.map(game => (
-            <div key ={game.id}>
+            <div key ={game.id} className="GameItem">
                 <Link to={`/games/${game.id}`}>
                 <img src ={game.img_url} alt = {game.title} />
                 <h3>{game.title}</h3>

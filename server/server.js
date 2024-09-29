@@ -65,7 +65,7 @@ app.get("/games", async (req, res) => {
   }
 });
 
-app.post("/games", async (req, res) => {
+app.post("/TalkToUs", async (req, res) => {
   console.log(req.body);
   const { title, studio, platforms, released } = req.body;
   try {
