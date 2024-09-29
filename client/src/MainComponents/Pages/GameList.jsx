@@ -7,7 +7,7 @@ export default function GameList(){
 
     useEffect(() =>{
         async function fetchGames(){
-            const res = await fetch('https://week7-project-s2c8.onrender.com')
+            const res = await fetch('https://week7-project-s2c8.onrender.com/games')
             const games = await res.json()
 
             setGames(games);
