@@ -32,11 +32,11 @@ app.get("/games", async (req, res) => {
         INNER JOIN genres ON game_genres.genres_id = genres.id
         GROUP BY games.title, games.studio, games.platforms, games.released;
       `);
-
       const games = result.rows;
       res.status(200).json(games);
       return;
     }
+
     if (req.query.include_genres && req.query.id) {
       console.log(req.query.id);
       const game = (
@@ -53,10 +53,15 @@ app.get("/games", async (req, res) => {
         )
       ).rows[0];
 
+      if (!game) {
+        return res.status(404).json({ error: "Game not found" });
+      }
+
       console.log(game);
       res.status(200).json(game);
       return;
     }
+
     const games = (await db.query("SELECT * FROM games")).rows;
     console.log(games);
     res.status(200).json(games);
@@ -64,6 +69,7 @@ app.get("/games", async (req, res) => {
     res.status(500).json(`${e.name}: ${e.message}`);
   }
 });
+
 
 app.post("/TalkToUs", async (req, res) => {
   console.log(req.body);
